@@ -5,43 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- MY CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+    <!-- HEADER/NAVBAR -->
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <h1 class="navbar-brand ml-auto mr-auto">Random Password Generator</h1>
+        </nav>
+    </header>
+    <!-- MAIN-CONTENT SECTION -->
+    <section>
+        <div class="container">
+            <!-- CONTENT BOX -->
+            <div class="row" id="content-box">
+                <div class="col-md-10">
+                    <!-- PAGE CONTENT HEADING -->
+                    <div class="page-header">
+                        <h2>Generate Password</h2>
+                    </div>
+                    <!-- TEXT-AREA -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                rows="6">Your Custom Password</textarea>
+                        </div>
+                    </div>
+                    <!-- BUTTONS -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary">Generate Password</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-secondary">Copy to Clipboard</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
+    </section>
 
-
+    <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
