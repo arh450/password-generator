@@ -3,18 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* BODY */
 body {
     background-color: #8779a1;
 }
 
+/* HEADER/NAVBAR */
 .navbar {
     background-color: #2c2437;
     color: #ffffff;
     padding: 20px;
+    margin: 0;
 }
    
-
 h1 {
     font-family: 'Work Sans', sans-serif;
     font-weight: bold;
@@ -23,15 +24,18 @@ h1 {
     text-align: center;
 }
 
+/* MAIN-CONTENT SECTION */
 section {
     margin: 50px 0 300px 0;
 }
 
+/* MAIN-CONTENT BOX */
 .col-md-10 {
     background-color: #e5cedb;
     margin: 0 auto;
 }
 
+/* PAGE CONTENT HEADER */
 .page-header {
     font-family: 'Work Sans', sans-serif;
     padding: 10px;
@@ -42,7 +46,8 @@ section {
 h2{
     margin-bottom: 0;
 }
-    
+   
+/* TEXTAREA */
 .col-md-8{
     margin: 0 auto;
 }
@@ -62,6 +67,7 @@ h2{
     text-align: center;
 }
 
+/* BUTTON */
 .btn {
     background-color: #314758;
     font-family: 'Work Sans', sans-serif;
