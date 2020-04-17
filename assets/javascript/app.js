@@ -29,10 +29,20 @@ var numberChar = "0123456789";
 // Empty object that will stores users desired types of characters to be used in password
 var userChoices = {};
 
-// Event on-click function to prompt user password length and confirm use of characters options
-generatePassword_Button.addEventListener("click", function (Event) {
+// Event on-click function to prompt user password length, ensures length is at least 8 characters and no more than 128 characters, if password length meets requirements, runs another function called confirmCharacters which is detailed below
+
+generatePassword_Button.addEventListener("click", function () {
     event.preventDefault();
-    var promptPasswordLength = parseInt(prompt("How many characters would you like your password to contain? (must be a between 8 and 128 characters)"));
+    var promptPasswordLength = parseInt(prompt("How many characters would you like your password to contain? (must be between 8 and 128 characters)"));
+    if (promptPasswordLength >= 8 && promptPasswordLength <= 128) {
+        confirmCharacters();
+    } else if (promptPasswordLength <= 8 || promptPasswordLength >= 128) {
+        alert("Note: Password must be at least 8 characters and no longer than 128 characters");
+    }
+});
+
+// Function that confirms with user what characters they would like to include in their password and stores character into empty object
+function confirmCharacters() {
     var confirmSpecialChar = confirm("Would you like to include special characters? (~!@#$%^&*(){};:<>/?=+)");
     var confirmLowerChar = confirm("Would you like to include lower case letters?");
     var confirmUpperChar = confirm("Would you like to include upper case letters?");
@@ -51,14 +61,15 @@ generatePassword_Button.addEventListener("click", function (Event) {
     if (confirmNumberChar === true) {
         userChoices["numberChar"] = numberChar;
     }
-
-
-
     console.log(userChoices);
-    console.log(promptPasswordLength);
+};
+
+
+
+    // console.log(promptPasswordLength);
     // console.log(confirmSpecialChar);
     // console.log(confirmLowerChar);
     // console.log(confirmUpperChar);
     // console.log(confirmNumberChar);
 
-});
+
