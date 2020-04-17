@@ -16,9 +16,28 @@
 
 // HTML ELEMENTS TO BE MANIPULATED BY JS:  #password-section, #generate-button
 
-// Dedined variables for password options/characters
+// DOM VARIABLES
+var passwordSection_TextArea = document.querySelector("#password-section");
+var generatePassword_Button = document.querySelector("#generate-button");
 
-var specialChar = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ';', ':', ':', '"', '<', '>', '.', '/', '?', '=', '+'];
-var lowerCaseChar = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var upperCaseChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var numberChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+// Defined variables for password options/characters
+var specialChar = "~!@#$%^&*(){};:<>/?=+";
+var lowerChar = "abcdefghijklmnopqrstuvwxyz";
+var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numberChar = "0123456789";
+
+// Event on-click function to prompt user password length
+generatePassword_Button.addEventListener("click", function (Event) {
+    event.preventDefault();
+    var promptPasswordLength = prompt("How many characters would you like your password to contain? (must be a between 8 and 128 characters)");
+    var confirmSpecialChar = confirm("Would you like to include special characters? (~!@#$%^&*(){};:<>/?=+)");
+    var confirmLowerChar = confirm("Would you like to include lower case letters?");
+    var confirmUpperChar = confirm("Would you like to include upper case letters?");
+    var confirmNumberChar = confirm("Would you like to include numbers?");
+
+    console.log(confirmSpecialChar);
+    console.log(confirmLowerChar);
+    console.log(confirmUpperChar);
+    console.log(confirmNumberChar);
+
+});
