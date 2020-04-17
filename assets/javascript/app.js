@@ -26,18 +26,39 @@ var lowerChar = "abcdefghijklmnopqrstuvwxyz";
 var upperChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numberChar = "0123456789";
 
-// Event on-click function to prompt user password length
+// Empty object that will stores users desired types of characters to be used in password
+var userChoices = {};
+
+// Event on-click function to prompt user password length and confirm use of characters options
 generatePassword_Button.addEventListener("click", function (Event) {
     event.preventDefault();
-    var promptPasswordLength = prompt("How many characters would you like your password to contain? (must be a between 8 and 128 characters)");
+    var promptPasswordLength = parseInt(prompt("How many characters would you like your password to contain? (must be a between 8 and 128 characters)"));
     var confirmSpecialChar = confirm("Would you like to include special characters? (~!@#$%^&*(){};:<>/?=+)");
     var confirmLowerChar = confirm("Would you like to include lower case letters?");
     var confirmUpperChar = confirm("Would you like to include upper case letters?");
     var confirmNumberChar = confirm("Would you like to include numbers?");
 
-    console.log(confirmSpecialChar);
-    console.log(confirmLowerChar);
-    console.log(confirmUpperChar);
-    console.log(confirmNumberChar);
+    // If statements that take users answers to confirms and add to the empty userChoice object
+    if (confirmSpecialChar === true) {
+        userChoices["specialChar"] = specialChar;
+    }
+    if (confirmLowerChar === true) {
+        userChoices["lowerChar"] = lowerChar;
+    }
+    if (confirmUpperChar === true) {
+        userChoices["upperChar"] = upperChar;
+    }
+    if (confirmNumberChar === true) {
+        userChoices["numberChar"] = numberChar;
+    }
+
+
+
+    console.log(userChoices);
+    console.log(promptPasswordLength);
+    // console.log(confirmSpecialChar);
+    // console.log(confirmLowerChar);
+    // console.log(confirmUpperChar);
+    // console.log(confirmNumberChar);
 
 });
