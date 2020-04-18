@@ -1,21 +1,3 @@
-// STEP AND PROCESS TO GET APPLICATION TO OPERATE/FUNCTION
-
-// On click of Generate Password button
-
-// 1. Prompt user "How many characters would you like your password to contain" (A number => 8 <= 128 or false)
-
-// 2. Confirm with user to include the use of special characters (if true include use of these special characters at random !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~) or if false do not include)
-
-// 3. Confirm with user to include use of numeric characters (if true include use of these numbers at random 0123456789 or if false do not include)
-
-// 3. Confirm with user to include the use of lowercase letters (if true include use of lowercase letters at random abcdefghijklmnopqrstuvwxyz or if false do not include)
-
-// 4. Confirm with user to include the use of uppercase letters (if true include use of uppercase letters at random ABCDEFGHIJKLMNOPQRSTUVWXYZ or if false do not include)
-
-//----> Finished customized random password is then displayed in textarea 
-
-// HTML ELEMENTS TO BE MANIPULATED BY JS:  #password-section, #generate-button
-
 // DOM VARIABLES
 var displayPasswordSection = document.querySelector("#password-section");
 var generatePasswordButton = document.querySelector("#generate-button");
@@ -33,14 +15,15 @@ var useLowerChar = false;
 var useUpperChar = false;
 var useNumberChar = false;
 
-// Empty ARRAY that will stores users desired types of characters to be used in password
+// Empty ARRAY that will store users desired types of characters to be used in password
 var userChoiceArray = [];
 
-// Empty Array where new password will be stored upon generation
+// Empty Array where new password will be stored upon password generation
 var newUserPassword = [];
 
-// Event on-click function to prompt user password length, ensures length is at least 8 characters and no more than 128 characters, and stores users choices into an array
+// On click of the "Generate Button" on the users screen a series of prompts/confirms that gather the users desired password character length and desired character type are shown. These outcomes are then concated into an array that contains their selected character types. Finally when password meets requried password character lengths is looped over the number of desired characters and random characters are generated from the concated array for a final new password to be displayed in the textarea on screen.
 
+// On-click event that calls functions described below
 generatePasswordButton.addEventListener("click", function () {
     event.preventDefault();
     userInputs();
@@ -48,6 +31,7 @@ generatePasswordButton.addEventListener("click", function () {
     generatePassword();
 });
 
+// Prompt and confirms that gets input from user regarding their desired password length and use of specific character types
 function userInputs() {
     userCharLength = parseInt(prompt("How many characters would you like your password to contain? (must be between 8 and 128 characters)"));
     useSpecialChar = confirm("Would you like to include special characters? (~!@#$%^&*(){};:<>/?=+)");
@@ -62,13 +46,7 @@ function userInputs() {
     // console.log(useNumberChar);
 }
 
-// function lengthCheck() {
-//     if (userCharLength >= 8 && userCharLength <= 128) {
-//     } else if (userCharLength <= 8 || userCharLength >= 128) {
-//         alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again");
-//     }
-// }
-
+// If statements that when true (to be included into password) concat into one array specific to the users choice
 function generateUserChoiceArray() {
     if (useSpecialChar === true) {
         userChoiceArray = userChoiceArray.concat(specialChar);
@@ -84,9 +62,10 @@ function generateUserChoiceArray() {
     }
 }
 
+// Randomizing function that when password meets requried password length loops over users desired password length and generates random charcters from the userChoiceArray and then displays final new password in the textarea on screen
 function generatePassword() {
     if (userCharLength < 8 || userCharLength > 128) {
-        alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again");
+        alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again!");
     } else {
         for (i = 0; i < userCharLength; i++) {
             newUserPassword += userChoiceArray[Math.floor(Math.random() * (userChoiceArray.length - 1))];
@@ -96,55 +75,6 @@ function generatePassword() {
         newUserPassword = [];
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function producedPassword() {
-//     for (var i = 0; i < userCharLength; i++) {
-//         var passwordString = "";
-//         var passwordChars = Object.keys(userChoices);
-//         var randomizedEl = passwordChars[Math.floor(Math.random() * passwordChars.length)]
-//         var singleChar = singleRandomChar(userChoices[passwordChars]);
-
-//         passwordString += singleChar;
-
-//         console.log("single random char: ", singleChar);
-//         console.log(passwordString, passwordString.length);
-//         console.log(userCharLength);
-
-
-//     }
-//     return passwordString
-// }
-
-// function singleRandomChar(takesString) {
-//     return takesString[Math.floor(Math.random() * takesString.length)]
-// }
-
-// producedPassword();
-
 
 
 
