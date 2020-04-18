@@ -1,14 +1,14 @@
 # Random Password Generator
 
 ## Description
-This is a responsive website application that generates a randomized password using certain character types for a user, which is then displayed on screen for the user to use.
+This is a responsive website application that generates a randomized password using certain character types for a user, which is then displayed on screen for the user.
 
 ### Features
 * Responsive layout using Bootstrap column/grid system.
 * Site structure, styling, and programming built with HTML5, Bootstrap 4, CSS3, and JavaScript.
 * User's are able to create a password of at least 8 characters and up to 128 characters.
 * Character categories for user's selection include:
-    * Specialized Characters (~!@#$%^&*(){};:<>/?=+)
+    * Specialized characters (~!@#$%^&*(){};:<>/?=+)
     * Lower case letters
     * Upper case letters
     * Numbers
@@ -16,7 +16,7 @@ This is a responsive website application that generates a randomized password us
 
 ### How it Works
 ##### See below for URL
-On the click of the "Generate Button" on the users screen a series of prompts/confirms that gather the users desired password character length and desired character type are shown. These outcomes are then concated into an array that contains their selected character types. Finally when password meets requried password character lengths is looped over the number of desired characters and random characters are generated from the concated array for a final new password to be displayed in the textarea on screen.
+On the click of the "Generate Button" on the user's screen a series of prompts/confirms that gather the user's desired password character length and desired character type are shown. These outcomes are then concated into an array that contains their selected character types. Finally when password meets the requried password character lengths, it is looped over the number of desired characters and random characters are generated from the concated array for a final new password to be displayed in the textarea on screen.
 
 ## URL 
 

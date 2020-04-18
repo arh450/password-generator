@@ -8,7 +8,7 @@ var lowerChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var upperChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var numberChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-// Defined deafault variables before user input
+// Defined deafault variables
 var userCharLength = 0;
 var useSpecialChar = false;
 var useLowerChar = false;
@@ -20,8 +20,6 @@ var userChoiceArray = [];
 
 // Empty Array where new password will be stored upon password generation
 var newUserPassword = [];
-
-// On click of the "Generate Button" on the users screen a series of prompts/confirms that gather the users desired password character length and desired character type are shown. These outcomes are then concated into an array that contains their selected character types. Finally when password meets requried password character lengths is looped over the number of desired characters and random characters are generated from the concated array for a final new password to be displayed in the textarea on screen.
 
 // On-click event that calls functions described below
 generatePasswordButton.addEventListener("click", function () {
