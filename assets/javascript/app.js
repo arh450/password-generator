@@ -17,7 +17,7 @@
 // HTML ELEMENTS TO BE MANIPULATED BY JS:  #password-section, #generate-button
 
 // DOM VARIABLES
-var displayPasswordSection_ = document.querySelector("#password-section");
+var displayPasswordSection = document.querySelector("#password-section");
 var generatePasswordButton = document.querySelector("#generate-button");
 
 // Arrays containing password types/characters
@@ -36,14 +36,16 @@ var useNumberChar = false;
 // Empty ARRAY that will stores users desired types of characters to be used in password
 var userChoiceArray = [];
 
-// Event on-click function to prompt user password length, ensures length is at least 8 characters and no more than 128 characters, if password length meets requirements, runs another function called confirmCharacters which is detailed below
+// Empty Array where new password will be stored upon generation
+var newUserPassword = [];
+
+// Event on-click function to prompt user password length, ensures length is at least 8 characters and no more than 128 characters, and stores users choices into an array
 
 generatePasswordButton.addEventListener("click", function () {
     event.preventDefault();
     userInputs();
-    lengthCheck();
     generateUserChoiceArray();
-
+    generatePassword();
 });
 
 function userInputs() {
@@ -60,12 +62,12 @@ function userInputs() {
     // console.log(useNumberChar);
 }
 
-function lengthCheck() {
-    if (userCharLength >= 8 && userCharLength <= 128) {
-    } else if (userCharLength <= 8 || userCharLength >= 128) {
-        alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again");
-    }
-}
+// function lengthCheck() {
+//     if (userCharLength >= 8 && userCharLength <= 128) {
+//     } else if (userCharLength <= 8 || userCharLength >= 128) {
+//         alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again");
+//     }
+// }
 
 function generateUserChoiceArray() {
     if (useSpecialChar === true) {
@@ -80,10 +82,20 @@ function generateUserChoiceArray() {
     if (useNumberChar === true) {
         userChoiceArray = userChoiceArray.concat(numberChar);
     }
-
-
 }
 
+function generatePassword() {
+    if (userCharLength < 8 || userCharLength > 128) {
+        alert("Note: Password must be at least 8 characters and no longer than 128 characters, please refresh and try again");
+    } else {
+        for (i = 0; i < userCharLength; i++) {
+            newUserPassword += userChoiceArray[Math.floor(Math.random() * (userChoiceArray.length - 1))];
+        }
+        displayPasswordSection.textContent = newUserPassword;
+
+        newUserPassword = [];
+    }
+}
 
 
 
