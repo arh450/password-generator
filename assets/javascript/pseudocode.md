@@ -13,3 +13,5 @@
 5. Confirm with user to include the use of uppercase letters (if true include use of uppercase letters at random ABCDEFGHIJKLMNOPQRSTUVWXYZ or if false do not include)
 
 ### Finished customized random password is then displayed in textarea 
+
+## See README for more details on function of generator
